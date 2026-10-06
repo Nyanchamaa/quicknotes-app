@@ -1,0 +1,365 @@
+/* === RESET & BASE === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f4f8;
+    color: #1a202c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === HEADER === */
+header {
+    background: #075f6d;
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+header nav {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: #a8d8df;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+header nav a:hover {
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+/* === MAIN === */
+main {
+    flex: 1;
+    max-width: 700px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* === SECTION CARDS === */
+section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+}
+
+section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #075f6d;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2f0f2;
+}
+
+/* === FORM === */
+#note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.6rem 0.85rem;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #1a202c;
+    background: #f7fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #075f6d;
+    box-shadow: 0 0 0 3px rgba(7, 95, 109, 0.12);
+    background: #ffffff;
+}
+
+/* === FORM ACTIONS (FLEXBOX) === */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.form-actions button[type="submit"] {
+    padding: 0.65rem 1.5rem;
+    background: #075f6d;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    flex: 1;
+}
+
+.form-actions button[type="submit"]:hover {
+    background: #054f5a;
+    transform: translateY(-1px);
+}
+
+.form-actions button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+#clear-all-btn {
+    padding: 0.65rem 1.25rem;
+    background: transparent;
+    color: #e53e3e;
+    border: 1.5px solid #e53e3e;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+#clear-all-btn:hover {
+    background: #fff5f5;
+}
+
+/* === ERROR MESSAGE === */
+#error-message {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-height: 1.2rem;
+}
+
+/* === SEARCH === */
+.search-bar {
+    margin-bottom: 1rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: #f7fafc;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #075f6d;
+    box-shadow: 0 0 0 3px rgba(7, 95, 109, 0.12);
+    background: #ffffff;
+}
+
+/* === NOTE COUNT === */
+#note-count {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+/* === NOTES LIST === */
+#notes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* === NOTE CARD === */
+#notes-list li {
+    padding: 1rem 1.1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    margin: 0;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s;
+}
+
+#notes-list li:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.note-text {
+    font-size: 0.95rem;
+    color: #2d3748;
+    line-height: 1.5;
+}
+
+.note-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.note-date {
+    font-size: 0.78rem;
+    color: #a0aec0;
+}
+
+.note-category-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.delete-btn {
+    padding: 0.3rem 0.75rem;
+    background: transparent;
+    color: #a0aec0;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    margin-left: auto;
+}
+
+.delete-btn:hover {
+    background: #fff5f5;
+    color: #e53e3e;
+    border-color: #e53e3e;
+}
+
+/* === CATEGORY COLOURS === */
+.category-personal {
+    border-left: 4px solid #0a9e7a;
+    background: #f0fdf9;
+}
+
+.category-personal .note-category-label {
+    background: #c6f6ee;
+    color: #0a9e7a;
+}
+
+.category-work {
+    border-left: 4px solid #c0392b;
+    background: #fff8f8;
+}
+
+.category-work .note-category-label {
+    background: #fed7d7;
+    color: #c0392b;
+}
+
+.category-study {
+    border-left: 4px solid #225198;
+    background: #f0f4ff;
+}
+
+.category-study .note-category-label {
+    background: #c3d2f6;
+    color: #225198;
+}
+
+/* === NO RESULTS MESSAGE === */
+.no-results {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.82rem;
+    color: #a0aec0;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+/* === RESPONSIVE — max-width: 600px === */
+@media (max-width: 600px) {
+    header {
+        padding: 1.25rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 0.75rem;
+    }
+
+    section {
+        padding: 1.25rem 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button[type="submit"],
+    #clear-all-btn {
+        width: 100%;
+        flex: none;
+    }
+
+    .note-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delete-btn {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
